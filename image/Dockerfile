@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
-MAINTAINER Phusion <info@phusion.nl>
+FROM debian:latest
+MAINTAINER Goran Cetusic <goran.cetusic@gmail.com>
 
 ENV HOME /root
 ADD . /build

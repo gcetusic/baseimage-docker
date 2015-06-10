@@ -135,12 +135,12 @@ The image is called `phusion/baseimage`, and is available on the Docker registry
     # See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
     # a list of version numbers.
     FROM phusion/baseimage:<VERSION>
-    
+
     # Use baseimage-docker's init system.
     CMD ["/sbin/my_init"]
-    
+
     # ...put your own build instructions here...
-    
+
     # Clean up APT when done.
     RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -180,7 +180,7 @@ All scripts must exit correctly, e.g. with exit code 0. If any script exits with
 The following example shows how you can add a startup script. This script simply logs the time of boot to the file /tmp/boottime.txt.
 
 In `logtime.sh` (make sure this file is chmod +x):
-    
+
     #!/bin/sh
     date > /tmp/boottime.txt
 
@@ -384,7 +384,7 @@ Here's how it compares to [using `docker exec` to login to the container or to r
 Baseimage-docker disables the SSH server by default. Add the following to your Dockerfile to enable it:
 
     RUN rm -f /etc/service/sshd/down
-    
+
     # Regenerate SSH host keys. baseimage-docker does not contain any, so you
     # have to do that yourself. You may also comment out this instruction; the
     # init system will auto-generate one during boot.

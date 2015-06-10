@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM ubuntu:15.04
 MAINTAINER Goran Cetusic <goran.cetusic@gmail.com>
 
 ENV HOME /root
